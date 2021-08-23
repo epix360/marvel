@@ -1,9 +1,9 @@
 const userAction = async () => {
-    const response = await fetch('https://gateway.marvel.com:443/v1/public/characters?apikey=00bc5f819bb0f261669e2bc249379ec3');
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
     const myJson = await response.json(); //extract JSON from the http response
     const obj = JSON.parse(JSON.stringify(myJson));
-    console.log(obj.name);
-    console.log(obj.description);
+    console.log(obj.title);
+    console.log(obj.completed);
   }
 
 const generateHeroBtn = document.getElementById('generateHeroBtn').addEventListener('click', userAction)
