@@ -5,3 +5,6 @@ const userAction = async () => {
     console.log(obj.name);
     console.log(obj.description);
   }
+
+const generateHeroBtn = document.getElementById('generateHeroBtn').addEventListener('click', userAction)
+
