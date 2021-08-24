@@ -11,17 +11,22 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container text-center">
-        <header>
+    <div class="container">
+        <header class="text-center">
             <h1>MARVEL</h1>
             <h2>Earth's mightiest heroes</h2>
             <p>Generate a random hero</p>
+            <button id="generateHeroBtn" class="btn btn-primary m-3" type="submit">Generate hero</button>  
         </header>
-        <section>
-            <h3 id="heroName">???</h3>
-            <img class="img-fluid" width="300" id="heroImg" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" alt="">
+        <section class="row">
+            <div class="col-sm-6">
+                <img class="img-fluid w-100" id="heroImg" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" alt="">
+            </div>
+            <div class="col-sm-6">
+                <h3 id="heroName">???</h3>
+                <p id="heroDescription"></p>
+            </div>
         </section>
-        <button id="generateHeroBtn" class="btn btn-primary" type="submit">Generate hero</button>   
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
