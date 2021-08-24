@@ -9,8 +9,24 @@ const userAction = async () => {
     const response = await fetch(completeUrl);
     const myJson = await response.json(); //extract JSON from the http response
     const obj = JSON.parse(JSON.stringify(myJson));
-    console.log(obj.data.results.name);
-    console.log(obj.data.results.description);
+    
+    const getRandomInt = function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+      }
+    const randomInt = getRandomInt(0, 25);
+
+    const heroData = obj.data.results[randomInt];
+    const name = heroData.name;
+    const imageSrc = heroData.thumbnail.path + '.jpg';
+
+    document.getElementById("heroName").innerHTML = name;
+    document.getElementById('heroImg').src = imageSrc;
+
+    if (!name) {
+        userAction();
+    }
   }
 
-const generateHeroBtn = document.getElementById('generateHeroBtn').addEventListener('click', userAction)
+const generateHeroBtn = document.getElementById('generateHeroBtn').addEventListener('click', userAction);
